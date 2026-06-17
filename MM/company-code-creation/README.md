@@ -33,16 +33,16 @@ Rather than building a Company Code from scratch (which risks missing critical u
 The new Company Code is generated using the organizational object copier to maintain data integrity.
 
 - **Copying Process:** Inheriting structural data from the reference template.
-  ![Copy Company Code](SCREENSHOTS/01_ec01_copy_company_code.png)
+  ![Copy Company Code](./SCREENSHOTS/01_ec01_copy_company_code.png)
 - **Execution Log:** Confirming the successful transfer of dependent tables.
-  ![Copy Log](SCREENSHOTS/02_ec01_copy_log.png)
+  ![Copy Log](./SCREENSHOTS/02_ec01_copy_log.png)
 
 ### 4.2 Entity Localization (OX02)
 
 Adjusting specific entity details, local currency (EUR), and Time Zone (CET) to ensure accurate timestamping for future business documents and transactions.
 
-![Company Code Data](SCREENSHOTS/03_ox02.png)
-![Address Details](SCREENSHOTS/04_ox02_address_details.png)
+![Company Code Data](./SCREENSHOTS/03_ox02.png)
+![Address Details](./SCREENSHOTS/04_ox02_address_details.png)
 
 ---
 
@@ -51,24 +51,24 @@ Adjusting specific entity details, local currency (EUR), and Time Zone (CET) to 
 ### 5.1 Global Parameters (OBY6)
 
 The central control hub for the Company Code. This ensures the unit knows how to process incoming business transactions.
-![Global Parameters](SCREENSHOTS/05_oby6_global_parameters.png)
+![Global Parameters](./SCREENSHOTS/05_oby6_global_parameters.png)
 
 ### 5.2 Fiscal Year Variant (OB29 & OB37)
 
 Defining the accounting calendar and assigning it to the Company Code to establish the financial framework.
-![Fiscal Year Definition](SCREENSHOTS/06_ob29_fiscal_year_variant.png)
-![Fiscal Year Assignment](SCREENSHOTS/07_ob37_assign_fy_variant.png)
+![Fiscal Year Definition](./SCREENSHOTS/06_ob29_fiscal_year_variant.png)
+![Fiscal Year Assignment](./SCREENSHOTS/07_ob37_assign_fy_variant.png)
 
 ### 5.3 Posting Period Variant (OBBO & OB52)
 
 Controlling the data flow gateway. The variant is created, assigned, and the specific time intervals are opened to allow the system to post data into the active periods.
-![Posting Period Variant](SCREENSHOTS/08_obbo_posting_period_variant.png)
-![Open Posting Periods](SCREENSHOTS/09_ob52_open_posting_periods.png)
+![Posting Period Variant](./SCREENSHOTS/08_obbo_posting_period_variant.png)
+![Open Posting Periods](./SCREENSHOTS/09_ob52_open_posting_periods.png)
 
 ### 5.4 Chart of Accounts Assignment (OB62)
 
 Linking the operational Chart of Accounts to the new entity to enable standard financial reporting and account determination.
-![Assign Chart of Accounts](SCREENSHOTS/10_ob62_assign_chart_of_accounts.png)
+![Assign Chart of Accounts](./SCREENSHOTS/10_ob62_assign_chart_of_accounts.png)
 
 ---
 
