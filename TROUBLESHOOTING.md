@@ -1,4 +1,0 @@
-| Kod Błędu | Transakcja | Opis Problemu (Symptom) | Rozwiązanie (Root Cause & Fix) |
-| :--- | :--- | :--- | :--- |
-| **ME062** | ME51N | *There is no provision for value-based inventory management for this material type in this plant.* | Problem z aktywacją ML dla zakładu. **1.** Wejdź w `OMX3` i przypisz Company Code do Valuation Area (Plant). **2.** W `OMS2` zaktualizuj wartości/ilości – wybierz typ materiału, dwuklik na 'quantity value updating' i aktywuj Qty & Value. |
-| **6027** | ME21N | *The purchasing organization you entered has not been defined for this supplier.* | W danych podstawowych dostawcy (Transakcja `BP`, rola FLVN01 Purchasing) należy przypisać i utrzymać nową Organizację Zakupową (Purchasing Org). |
