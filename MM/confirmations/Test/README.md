@@ -15,3 +15,19 @@ ME92F transaction would be work if: NEU OUTPUT have been completed
 
 After saving output in pdf should be genereted automaticaly
 (screen6)
+
+6. After we have got confirmation from the vendor we come back to order and fill with AB confirmation.
+(screen7)
+In MD04 we can see the status in MRPelement have been changed to ShipNot it is connected wit our customizng of AB MRP relevant if this customizing wouldnt be heare status became the same and nothing will hapend.
+(SCREEN8)
+
+7. Instead of typing the next step manually, we will let the system generate it, just like a real warehouse integration. Go to VL31N. Stock playcement and fill the "PutawayQty"
+(screen9)
+
+9. Based on confirmation control key customizing in hedader if autoReg/GR is :
+- 0 not relevant then - status stay the same but inbound delivery is added in the row
+- 1 reg automatically - in md04 status is changed after vl31n to Put Away
+- 2 register and recive automatically - based on vl31n auto 101 movent is posted.
+- 3
+
+
