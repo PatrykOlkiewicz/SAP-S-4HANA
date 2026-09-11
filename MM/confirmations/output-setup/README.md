@@ -1,26 +1,36 @@
-SOP: Bypassing S/4HANA Output Management for Classic PO Message Generation
-Step 1: Navigate to the Output Control Settings
+# SAP MM - Purchase Order Output Configuration (NEU)
 
-Execute transaction SPRO and open the SAP Reference IMG.
+This repository demonstrates how to configure automatic message outputs for Purchase Orders in SAP S/4HANA. In this scenario, we set up the traditional `NEU` output type, ensuring that purchase orders are automatically printed immediately upon saving.
 
-Follow the menu path: Cross-Application Components → Output Control → Manage Application Object Type Activation.
+## 1. SOP: Bypassing S/4HANA Output Management for Classic PO Message Generation
 
-Step 2: Deactivate the Modern Output Engine
+**Step 1: Navigate to the Output Control Settings**
+* Execute transaction `SPRO` and open the SAP Reference IMG.
+* Follow the menu path: *Cross-Application Components → Output Control → Manage Application Object Type Activation*.
 
-Locate the Application Object Type PURCHASE_ORDER in the generated list.
+**Step 2: Deactivate the Modern Output Engine**
+* Locate the Application Object Type `PURCHASE_ORDER` in the generated list.
+* Change its Activation Status from **Active** to **Inactive**.
 
-Change its Activation Status from Active to Inactive.
+> **System Architecture Note:** This action successfully disables the BRF+/Adobe Document Services framework. The system will automatically revert to the classic NAST (SAPscript/SmartForms) message determination procedure, bypassing the need for complex server-side customizing or missing Java stacks.
 
-System Architecture Note: This action successfully disables the BRF+/Adobe Document Services framework. The system will automatically revert to the classic NAST (SAPscript/SmartForms) message determination procedure, bypassing the need for complex server-side customizing or missing Java stacks.
+![Application Object Type Configuration](screenshots/Zrzut%20ekranu%202026-08-03%20151439.png)
 
-Step 3: Configure the Classic Output Parameters in the PO
+**Step 3: Configure the Classic Output Parameters in the PO**
+To complete this step, proceed to the dispatch and communication settings outlined below.
 
-Open transaction ME21N to create a new Purchase Order (or ME22N to edit an existing one).
+---
 
-Navigate to the Messages screen at the header level and enter your classic output type (e.g., NEU).
+## 2. Dispatch Time Settings
 
-Select the message line and click the Communication method button. To prevent the system from searching for a non-existent optical archive (which triggers the ME142 error), set the Storage Mode field strictly to 1 (Print only) and ensure your logical destination (e.g., LP01 or LOCL) is filled.
+To ensure the output is generated instantly when the document is created, the dispatch time must be properly configured. Within the output condition records or document output details, set the **Dispatch time** to `4 Send immediately (when saving the application)`.
 
-Go back, click the Further data button, and change the Dispatch time to 4 (Send immediately).
+![Dispatch Time Configuration](screenshots/dispatch%20time.png)
 
-Save the Purchase Order. The message will now process automatically and generate a successful green status.
+---
+
+## 3. Communication Method and Print Parameters
+
+Finally, the printing parameters must be defined to route the output to the correct destination. Set the **Logical destination** (e.g., `LOCL` for local printing), check the **Print immediately** box, and ensure the **Storage Mode** is set to `1 Print only` to trigger the physical or PDF printout instantly.
+
+![Communication Method Settings](screenshots/communication%20method%201.png)
