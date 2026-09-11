@@ -25,9 +25,9 @@ In MD04 we can see the status in MRPelement have been changed to ShipNot it is c
 (screen9)
 
 9. Based on confirmation control key customizing in hedader if autoReg/GR is :
-- 0 not relevant then - status stay the same but inbound delivery is added in the row
+- 0 not relevant then - status stay the same but inbound delivery number is added in the row
 - 1 reg automatically - in md04 status is changed after vl31n to Put Away
-- 2 register and recive automatically - based on vl31n auto 101 movent is posted.
+- 2 register and recive automatically - based on vl31n auto 101 movent is posted and order is not visible in md04
 - 3
 
 
