@@ -1,6 +1,6 @@
 1. Based on our configuration, we want to create an order with a late confirmation from the vendor. To trigger this, we need to change the document date to be at least 3 days in the past. We create the order with our previously configured confirmation control key. (MORE ABOUT CUSTOMIZING CAPABILITIES HERE: [Confirmations Setup](../../confirmations/confirmations-setup)). 
 
-Confirmation Control Key:
+Confirmation Control Key: 
 ![Header](screenshots/11.png)
 ![Confirmation Sequence](screenshots/22.png)
 
