@@ -41,3 +41,15 @@ These reminders check if the vendor has sent the confirmation document. Their be
 * **Configuration Path (SPRO):** *Materials Management ➔ Purchasing ➔ Confirmations ➔ Set Up Confirmation Control*
 * In this configuration, you define the monitoring periods, reference dates, and the crucial `Subject to Reminder` indicator for specific confirmation sequences.
 ![Confirmation Control Key](screenshots/8.png)
+
+### 3. Automatic Goods Receipt (AutoReg/GR) in confirmation control key Configuration
+
+Based on the Confirmation Control Key customizing at the header level, the `AutoReg/GR` parameter defines the exact level of automation for the Inbound Delivery (`VL31N`). 
+
+Depending on the business requirement, the system behaves in one of four ways:
+
+*   **0 (Not relevant):** Fully manual. After saving `VL31N`, the status stays the same. The Inbound Delivery number is added as an expected receipt in `MD04`, but the 101 Goods Receipt must be posted manually.
+*   **1 (Register automatically):** System updates status. After `VL31N`, the MRP status in `MD04` is automatically changed to "Putaway," but the 101 movement is not posted yet.
+*   **2 (Register and receive automatically):** Full automation (Touchless). Saving `VL31N` instantly posts the 101 Goods Receipt in the background. The order is no longer visible in `MD04` because the expected supply has immediately become physical unrestricted stock.
+*   **3 (Automatically receive with manual registration):** Hybrid automation. After `VL31N`, the status in `MD04` does not change. The 101 movement is only posted in the background when the delivery is physically registered (e.g., a truck scanned at the gate triggering the "In Plant" status in `VL32N`). 
+    *   *Note: Without active Yard Management or scanner integration, Option 3 safely degrades and behaves identically to Option 0.*
