@@ -32,8 +32,8 @@ After saving, the output PDF should be generated automatically.
 In MD04, we can see the status in the MRP element has been changed to "ShipNot". This is directly connected with our custom configuration of the AB confirmation being MRP-relevant. If this customization wasn't here, the status would remain the same and nothing would happen.
 ![MD04 ShipNot](screenshots/8.png)
 
-7. Instead of typing the next receiving step manually, we will let the system generate it, simulating real warehouse integration. Go to VL31N to create the Inbound Delivery, simulate stock placement, and fill in the "Putaway Qty". 
+7. Go to VL31N to create the Inbound Delivery, simulate stock placement, and fill in the "Putaway Qty". 
 ![VL31N Inbound Delivery](screenshots/9.png)
 
-Because we have configured the control key to "Register and Receive Automatically", the Goods Receipt (101) is posted automatically in the background once the delivery is completed. The order will then disappear from MD04 because it has been completely picked up and received. As seen in the Purchase Order History, the 101 movement is now successfully generated.
+Because we have configured the control key to "Register and Receive Automatically", the Goods Receipt (movement type 101) is posted automatically in the background once the delivery is completed. The purchase order is no longer displayed in MD04 because the full quantity has been received. As shown in the Purchase Order History, the 101 movement has been successfully generated.
 ![101 Goods Receipt](screenshots/10.png)
